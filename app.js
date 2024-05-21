@@ -2,6 +2,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const processRoute = require('./routes/process.route')
 const connectDb = require('./configs/connectDb')
+
 dotenv.config()
 
 const app = express()
