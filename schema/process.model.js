@@ -9,7 +9,7 @@ const processSchema = new Schema({
   },
   creation_time: {
     type: Date,
-    default: Date.now
+    required: true
   },
   logs: {
     type: [String],
