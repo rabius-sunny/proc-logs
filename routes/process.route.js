@@ -5,7 +5,7 @@ const {
   getProcessById,
   getAllProcesses,
   deleteProcessById
-} = require('../controller/process.controller')
+} = require('../controllers/process.controller')
 
 // Utility function to generate a random number
 

@@ -4,14 +4,14 @@ const dotenv = require('dotenv')
 const processRoute = require('./routes/process.route')
 const connectDb = require('./configs/connectDb')
 const scheduler = require('./jobs/cron')
+
 dotenv.config()
+const app = express()
 
 const PORT = process.env.PORT || 3000
 const cronSchedule = '*/5 * * * * *'
 const job = cron.schedule(cronSchedule, scheduler)
 job.start()
-
-const app = express()
 
 // connect to database
 connectDb()

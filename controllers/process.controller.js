@@ -8,7 +8,7 @@ const createProcess = async (req, res) => {
 
   try {
     await newProcess.save()
-    res.status(201).json({ ...newProcess })
+    res.status(201).json({ process: newProcess })
   } catch (error) {
     res.status(500).json({ error, message: 'Error creating process' })
   }
@@ -38,12 +38,10 @@ const deleteProcessById = async (req, res) => {
   const pid = req.params.pid
   try {
     await Process.findOneAndDelete({ pid })
-    res
-      .status(201)
-      .json({
-        ok: true,
-        message: `Process: ${pid} has been deleted successfully.`
-      })
+    res.status(201).json({
+      ok: true,
+      message: `Process: ${pid} has been deleted successfully.`
+    })
   } catch (error) {
     res.status(500).json({ error, message: 'Error deleting process' })
   }
